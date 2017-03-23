@@ -51,8 +51,8 @@ if __name__ == '__main__':
         print "Need a log to parse!"
         sys.exit(1)
 
-    reg = re.compile('.+\s-\s(?P<id>[0-9a-z-]+) .*')
-    regUnknown = re.compile('([0-9\.]*\s-\s)-')
+    reg = re.compile('([0-9]{1,3}\.){3}.([0-9]{1,3})\s-\s(?P<id>[0-9a-z-]+) .*')
+    regUnknown = re.compile('(([0-9]{1,3}\.){3}.([0-9]{1,3})\s-\s)-')
     uid_dict = {'NONE':'NONE'}
     
     with open(sys.argv[1], 'w') as rapport:
